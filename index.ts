@@ -1,4 +1,4 @@
-import { Maybe, Result, none, some } from "@onion2d/onion-essentials";
+import { Maybe, Result, none, some } from "onion-essentials";
 import { existsSync, mkdirSync } from "fs";
 import { readFile, readdir, writeFile } from "fs/promises";
 import path from "path";
