@@ -1,6 +1,6 @@
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import { init, insertOne } from './index';
+import { init, insertOne } from './index.js';
 
 process.argv[0] = "db";
 
