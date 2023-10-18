@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": "./",
+        "outDir": "./dist/out-tsc",
+        "strict": false,
+        "allowUnusedLabels": true,
+        "noUnusedLocals": false,
+        "moduleResolution": "NodeNext",
+        "esModuleInterop": true,
+        "moduleDetection": "force", /* 
+        "verbatimModuleSyntax": true, */
+        "module": "NodeNext"
+    },
+    "ts-node": {
+        "esm": true // «———— enabling ESM for ts-node   
+    }
+}
