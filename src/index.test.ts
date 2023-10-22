@@ -1,5 +1,5 @@
-import { some } from "onion-essentials";
-import { insertOne, insertMany, findOne, find, dropCollection } from "./index.js";
+import { none, some } from "onion-essentials";
+import { insertOne, insertMany, findOne, find, dropCollection, deleteOne } from "./index.js";
 
 test("callback insertOne-FindOne-DropCollection", async () => {
     await new Promise<void>((resolve, reject) => {
@@ -113,8 +113,26 @@ test("promise insertMany-findOne-dropCollection", async () => {
     }
 })
 
+test("deleteOne", async () => {
+    const id = await insertOne('test', { name: 'test' });
+    if (id.isErr()) {
+        throw "Insertion failed";
+    }
+
+    const result = await deleteOne('test', { id: id.unwrap() })
+    if (result.isErr()) {
+        throw "Delete failed"
+    }
+
+    const doc = await findOne('test', { id: id.unwrap() })
+    if (doc.isErr()) {
+        throw "FindOne failed";
+    }
+
+    expect(doc.unwrap()).toEqual(none())
+})
+
 test("dropCollection", async () => {
     const result = await dropCollection('test')
     expect(result.isErr()).toBe(false)
 })
-
