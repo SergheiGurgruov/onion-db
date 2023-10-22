@@ -5,7 +5,7 @@
   "main": "index.ts",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tsc && node --experimental-vm-modules node_modules/jest/bin/jest.js ./dist/index.test.js",
     "build": "tsc",
     "dev": "nodemon index.ts"
   },
@@ -20,5 +20,10 @@
     "onion-essentials": "github:SergheiGurgruov/onion-essentials",
     "uuid": "^9.0.1",
     "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.6",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1"
   }
 }

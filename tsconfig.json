@@ -1,11 +1,15 @@
 {
     "$schema": "https://json.schemastore.org/tsconfig",
     "compileOnSave": false,
+    "include": [
+        "src/**/*"
+    ],
     "compilerOptions": {
         "baseUrl": "./",
-        "outDir": "./dist/out-tsc",
+        "outDir": "./dist/",
         "strict": false,
         "allowUnusedLabels": true,
+        "declaration": true,
         "noUnusedLocals": false,
         "moduleResolution": "NodeNext",
         "esModuleInterop": true,

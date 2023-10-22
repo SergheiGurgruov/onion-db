@@ -8,7 +8,4 @@ yargs(hideBin(process.argv))
     .command(['init'], 'init the db', () => { }, () => {
         init()
     })
-    .command(['test'], 'test insertion', () => { }, () => {
-        insertOne('test', { name: 'test' })
-    })
     .parseSync()
